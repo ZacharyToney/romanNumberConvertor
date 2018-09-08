@@ -19,6 +19,11 @@ public class Tests {
     }
 
     @Test
+    public void testLargeNegativeNumber(){
+        Assert.assertEquals(RomanNumberConvertor.arabicToRoman(-5000), "Please enter a valid value");
+    }
+
+    @Test
     public void testPositiveNumber(){
         Assert.assertEquals(RomanNumberConvertor.arabicToRoman(53), "LIII");
     }
@@ -31,6 +36,11 @@ public class Tests {
     @Test
     public void testPastMax(){
         Assert.assertEquals(RomanNumberConvertor.arabicToRoman(5000), "Please enter a valid value");
+    }
+
+    @Test
+    public void testMinimum(){
+        Assert.assertEquals(RomanNumberConvertor.arabicToRoman(1), "I");
     }
 
 
