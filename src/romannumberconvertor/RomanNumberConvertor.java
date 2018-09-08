@@ -9,16 +9,11 @@ public class RomanNumberConvertor {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter an arabic number: ");
-
-        if(scanner.hasNextInt()){
+        if (scanner.hasNextInt()) {
             int arabicNumber = scanner.nextInt();
-            if(arabicNumber<=0){
-                System.out.println("Please enter a positive value");
-            } else {
-                System.out.println("The roman numeral of " + arabicNumber + " is " + arabicToRoman(arabicNumber));
-            }
+            System.out.println(arabicToRoman(arabicNumber));
         } else {
-            System.out.println("Please enter a valid number");
+            System.out.println("Please enter a number");
         }
     }
 
@@ -59,11 +54,15 @@ public class RomanNumberConvertor {
 
     public static String arabicToRoman(int arabicNumber) {
         buildTreeMap();
-        int closestKey = treeMap.floorKey(arabicNumber);
-        if(arabicNumber != closestKey) {
-            return treeMap.get(closestKey) + arabicToRoman(arabicNumber - closestKey);
-        }else{
-            return treeMap.get(arabicNumber);
+        if (arabicNumber <= 0 || arabicNumber > 4999) {
+            return "Please enter a valid value";
+        } else {
+            int closestKey = treeMap.floorKey(arabicNumber);
+            if (arabicNumber != closestKey) {
+                return treeMap.get(closestKey) + arabicToRoman(arabicNumber - closestKey);
+            } else {
+                return treeMap.get(arabicNumber);
+            }
         }
     }
 }
