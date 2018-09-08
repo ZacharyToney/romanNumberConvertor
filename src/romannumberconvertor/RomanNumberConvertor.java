@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class RomanNumberConvertor {
     
     // This function returns value of a Roman symbol
-    public int valueOfRomanNumeral(char x)
+    public static int valueOfRomanNumeral(char x)
     {
         if (x == 'I')
             return 1;
@@ -27,7 +27,7 @@ public class RomanNumberConvertor {
     }
     
     // Finds the value of the roman numeral string
-    public int romanToArabic(String str)
+    public static int romanToArabic(String str)
     {   
         int result = 0;
         for (int i=0; i<str.length(); i++)
