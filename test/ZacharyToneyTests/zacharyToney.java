@@ -1,10 +1,7 @@
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+package ZacharyToneyTests;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
-import romannumberconvertor.RomanNumberConvertor;
 public class zacharyToney {
     
     @Test
